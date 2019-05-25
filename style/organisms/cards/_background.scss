@@ -1,0 +1,14 @@
+.og-cards-background {
+  &:hover {
+    .og-cards-background__article {
+      filter: grayscale(100%);
+    }
+
+  }
+  &__article {
+    height: 40vh;
+    &:hover {
+      filter: inherit !important;
+    }
+  }
+}

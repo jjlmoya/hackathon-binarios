@@ -6,6 +6,44 @@ module.exports = {
     name: 'El Señor de los Anillos',
     logo: '/images/hackathon/logo.png',
     model: {
+        characters: [
+            {
+                link: '',
+                name: 'Frodo Bolsón',
+                image: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
+            },
+            {
+                link: '',
+                name: 'Boromir',
+                image: 'https://vignette.wikia.nocookie.net/lotr/images/b/b4/Seanbean_boromir.jpg/revision/latest?cb=20110327195115',
+            },
+            {
+                link: '',
+                name: 'Gandalf',
+                image: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-the-lord-of-the-rings-ian-mckellen.jpg'
+            },
+            {
+                link: '',
+                name: 'Saruman',
+                image: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833'
+            },
+            {
+                link: '',
+                name: 'Galadriel',
+                image: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833'
+            },
+            {
+                link: '',
+                name: 'Abc',
+                image: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833'
+            },
+            {
+                link: '',
+                name: 'Saruman',
+                image: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833'
+            }
+
+        ],
         films: [
             {
                 name: 'La Comunidad del Anillo',
@@ -48,7 +86,7 @@ module.exports = {
     pages: [
         {
             path: 'personajes',
-            view: 'pages/hackathon/characters/',
+            view: 'pages/hackathon/characters',
             layout: 'main',
             name: 'Personajes'
         }

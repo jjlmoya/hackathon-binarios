@@ -5,8 +5,8 @@
     transition-delay: 1s;
   }
   &--left {
-    transform: translateX(-200%);
-    &.is-loaded, &.is-active, .is-active & {
+    transform: translateX(-100vw);
+    &.is-all-visible {
       transform: translateX(0);
     }
   }
