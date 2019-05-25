@@ -1,71 +1,27 @@
 const mongoose = require('mongoose');
 const Config = require('./config');
-const express = require('express');
+const ConfigDBModels = require('./config-db-models');
 
-let Place, Character, Film;
+let models;
 
 mongoose.connect(Config.db().protocol + Config.db().url + Config.db().dbName,
   { useNewUrlParser: true },
   function (err, db) {
     if (err) return done(err);
 
-    createSchemas();
+    models = ConfigDBModels.createSchemas(mongoose);
 
     dropDatabase()
 })
 
-createSchemas = function () {
-  var placeSchema = new mongoose.Schema({
-      name: String,
-      extension: Number,
-      pageUrl: String,
-      theme: String,
-  });
-
-  var characterSchema = new mongoose.Schema({
-      name: String,
-      demographicData: Array,
-      placeOfBirth: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Place',
-      },
-      alive: Boolean,
-      imageUrl: String,
-      pageUrl: String,
-      theme: String,
-  });
-
-  var filmSchema = new mongoose.Schema({
-      name: String,
-      releaseYear: Number,
-      duration: Number,
-      storyTimeOrder: Number,
-      characters: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Character',
-      }],
-      places: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Place',
-      }],
-      imageUrl: String,
-      pageUrl: String,
-      theme: String,
-    });
-
-  Place = mongoose.model('Place', placeSchema);
-  Character = mongoose.model('Character', characterSchema);
-  Film = mongoose.model('Film', filmSchema);
-}
-
 dropDatabase = function () {
-  Place.remove({}, function(err) {
+  models.Place.remove({}, function(err) {
    console.log('Places removed');
 
-   Character.remove({}, function(err) {
+   models.Character.remove({}, function(err) {
     console.log('Characters removed');
 
-    Film.remove({}, function(err) {
+    models.Film.remove({}, function(err) {
      console.log('Films removed');
 
      save1();
@@ -75,7 +31,7 @@ dropDatabase = function () {
 }
 
 save1 = function () {
-  let doc = new Place({
+  let doc = new models.Place({
     name: 'La Comarca',
     extension: 100,
     pageUrl: '/zona/la-comarca',
@@ -87,7 +43,7 @@ save1 = function () {
 
 save2 = function (error, laComarca) {
   if (error) return console.error(error);
-  var doc = new Character({
+  var doc = new models.Character({
     name: 'Frodo Bolsón',
     demographicData: ['Hobbit', 'Bolson', 'PortadorAnillo',],
     placeOfBirth: laComarca.id,
@@ -102,7 +58,10 @@ save2 = function (error, laComarca) {
 
 save3 = function (error, result) {
   if (error) return console.error(error);
-  var doc = new Character({
+
+  let comunidadCharacters = [result];
+
+  var doc = new models.Character({
     name: 'Boromir',
     demographicData: null,
     placeOfBirth: null,
@@ -112,12 +71,15 @@ save3 = function (error, result) {
     theme: 'forest',
   });
 
-  doc.save((error, result) => save4(error, result));
+  doc.save((error, result) => save4(error, result, comunidadCharacters));
 }
 
-save4 = function (error, result) {
+save4 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
-  var doc = new Character({
+
+  comunidadCharacters.push(result);
+
+  var doc = new models.Character({
     name: 'Gandalf',
     demographicData: null,
     placeOfBirth: null,
@@ -127,12 +89,14 @@ save4 = function (error, result) {
     theme: 'kino',
   });
 
-  doc.save((error, result) => save5(error, result));
+  doc.save((error, result) => save5(error, result, comunidadCharacters));
 }
 
-save5 = function (error, result) {
+save5 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
-  var doc = new Character({
+
+  comunidadCharacters.push(result);
+  var doc = new models.Character({
     name: 'Saruman',
     demographicData: null,
     placeOfBirth: null,
@@ -142,12 +106,14 @@ save5 = function (error, result) {
     theme: 'lime-sports',
   });
 
-  doc.save((error, result) => save6(error, result));
+  doc.save((error, result) => save6(error, result, comunidadCharacters));
 }
 
-save6 = function (error, result) {
+save6 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
-  var doc = new Character({
+
+  comunidadCharacters.push(result);
+  var doc = new models.Character({
     name: 'Galadriel',
     demographicData: null,
     placeOfBirth: null,
@@ -157,18 +123,18 @@ save6 = function (error, result) {
     theme: 'lime-sports',
   });
 
-  doc.save((error, result) => save7(error, result));
+  doc.save((error, result) => save7(error, result, comunidadCharacters));
 }
 
 
-save7 = function (error, bilbo) {
+save7 = function (error, bilbo, comunidadCharacters) {
   if (error) return console.error(error);
-  var doc = new Film({
+  var doc = new models.Film({
     name: 'La Comunidad del Anillo',
     releaseYear: 2001,
     duration: 178,
     storyTimeOrder: 4,
-    characters: [bilbo.id],
+    characters: comunidadCharacters,
     places: null,
     imageUrl: 'http://elanillounico.com/wp-content/uploads/2016/12/ESDLA.-LCDA.jpg',
     pageUrl: '/pelicula/la-comunidad-del-anillo',
