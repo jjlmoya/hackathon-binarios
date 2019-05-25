@@ -102,6 +102,9 @@ save2 = function (error, laComarca) {
 
 save3 = function (error, result) {
   if (error) return console.error(error);
+
+  let comunidadCharacters = [result];
+
   var doc = new Character({
     name: 'Boromir',
     demographicData: null,
@@ -112,11 +115,14 @@ save3 = function (error, result) {
     theme: 'forest',
   });
 
-  doc.save((error, result) => save4(error, result));
+  doc.save((error, result) => save4(error, result, comunidadCharacters));
 }
 
-save4 = function (error, result) {
+save4 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
+
+  comunidadCharacters.push(result);
+
   var doc = new Character({
     name: 'Gandalf',
     demographicData: null,
@@ -127,11 +133,13 @@ save4 = function (error, result) {
     theme: 'kino',
   });
 
-  doc.save((error, result) => save5(error, result));
+  doc.save((error, result) => save5(error, result, comunidadCharacters));
 }
 
-save5 = function (error, result) {
+save5 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
+
+  comunidadCharacters.push(result);
   var doc = new Character({
     name: 'Saruman',
     demographicData: null,
@@ -142,11 +150,13 @@ save5 = function (error, result) {
     theme: 'lime-sports',
   });
 
-  doc.save((error, result) => save6(error, result));
+  doc.save((error, result) => save6(error, result, comunidadCharacters));
 }
 
-save6 = function (error, result) {
+save6 = function (error, result, comunidadCharacters) {
   if (error) return console.error(error);
+
+  comunidadCharacters.push(result);
   var doc = new Character({
     name: 'Galadriel',
     demographicData: null,
@@ -157,18 +167,18 @@ save6 = function (error, result) {
     theme: 'lime-sports',
   });
 
-  doc.save((error, result) => save7(error, result));
+  doc.save((error, result) => save7(error, result, comunidadCharacters));
 }
 
 
-save7 = function (error, bilbo) {
+save7 = function (error, bilbo, comunidadCharacters) {
   if (error) return console.error(error);
   var doc = new Film({
     name: 'La Comunidad del Anillo',
     releaseYear: 2001,
     duration: 178,
     storyTimeOrder: 4,
-    characters: [bilbo.id],
+    characters: comunidadCharacters,
     places: null,
     imageUrl: 'http://elanillounico.com/wp-content/uploads/2016/12/ESDLA.-LCDA.jpg',
     pageUrl: '/pelicula/la-comunidad-del-anillo',
