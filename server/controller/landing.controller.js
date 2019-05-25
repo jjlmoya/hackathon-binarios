@@ -4,41 +4,41 @@ const Commons = require('../services/commons.services');
 const mongoose = require('mongoose');
 const ConfigDBModels = require('../config-db-models');
 
-let models = ConfigDBModels.createSchemas(mongoose);;
+let models = ConfigDBModels.createSchemas(mongoose);
 
 
 module.exports = function (app) {
-    router.forEach(function (corePage) {
-        app.get(corePage.path, function (req, res) {
-            res.render(corePage.view, Commons.join(corePage));
-        });
-        if (corePage.pages) {
-            corePage.pages.forEach(function (page) {
-                app.get(corePage.path + page.path, function (req, res) {
-                    res.render(page.view, Commons.join(corePage));
-                });
-            });
-        }
+// getFilm('/pelicula/la-comunidad-del-anillo');
 
-        app.get('hackaton/personajes', function (req, res) {
-          //getModeloPersonajes
-            res.render(corePage.view, Commons.join(corePage));
-        });
+  // app.get('/', function (req, res) {
+  //   console.log(Commons.join(corePage));
+  //     res.render(corePage.view, Commons.join(corePage));
+  // });
 
-        app.get('hackaton/personaje/{character}', function (req, res) {
-          //getModelPersonaje(character)
-            res.render(corePage.view, Commons.join(corePage));
-        });
+
+
+  app.get('/hackathon/personajes', function (req, res) {
+    let characters = getCharacters().then((result) => {
+      console.log(result);
+
+      res.render('pages/hackathon/characters',
+        Commons.join(Commons.join({characters: result})));
     });
+
+  });
+
+
+
+  // app.get('hackaton/personaje/{character}', function (req, res) {
+  //   //getModelPersonaje(character)
+  //     res.render(corePage.view, Commons.join(corePage));
+  // });
 };
 
 getCharacters = function () {
     var query = models.Character.find();
 
-    query.exec(function (error, result) {
-     if (error) return console.error(error);
-     return result;
-   });
+   return query.exec();
 }
 
 getCharacter = function (characterUrl) {
@@ -46,10 +46,7 @@ getCharacter = function (characterUrl) {
       'pageUrl': characterUrl,
     });
 
-    query.exec(function (error, result) {
-     if (error) return console.error(error);
-     return result;
-   });
+   return query.exec();
 }
 
 getFilms = function () {
@@ -57,10 +54,7 @@ getFilms = function () {
     .find()
     .populate('characters');
 
-    query.exec(function (error, result) {
-     if (error) return console.error(error);
-     return result;
-   });
+    return query.exec();
 }
 
 getFilm = function (filmUrl) {
@@ -70,8 +64,5 @@ getFilm = function (filmUrl) {
     })
     .populate('characters');
 
-    query.exec(function (error, result) {
-     if (error) return console.error(error);
-     return result;
-   });
+    return query.exec();
 }

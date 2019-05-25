@@ -1,12 +1,12 @@
 <section class="og-cards-background l-grid-column--full
                 l-flex l-flex--wrap l-flex--justify-center a-mar-40">
-    {{#each this.model.characters}}
-        <a href="{{this.link}}" class="og-cards-background__article a-mi a-mi--left bs_viewport {{this.theme}}
+    {{#each characters}}
+        <a href="{{this.pageUrl}}" class="og-cards-background__article a-mi a-mi--left bs_viewport {{this.theme}}
                         l-column--1-4 l-column--mobile--1-1 l-position
                         a-mar-5 u-pointer u-shadow--bottom a-text">
             <picture class="a-image a-image--background l-position--absolute a-pad-0 ">
                 <img class="a-image l-column--1-1 a-image--cover a-border--smooth"
-                     src="{{this.image}}">
+                     src="{{this.imageUrl}}">
             </picture>
             <h2 class="a-text a-text--xl  a-pad-20 a-text--shadow a-text--secondary a-text--bold">
                 {{this.name}}

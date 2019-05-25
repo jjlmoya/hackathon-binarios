@@ -3,7 +3,7 @@ module.exports = function (app) {
         express = require('express'),
         exphbs = require('express-handlebars');
     app.engine('.hbs', exphbs({
-        defaultLayout: '../layout/main',
+        defaultLayout: '../layouts/main',
         extname: '.hbs',
         partialsDir: 'html/partials',
         helpers: {
@@ -50,5 +50,3 @@ module.exports = function (app) {
     app.set('views', path.join(__dirname, '../html'));
     app.use(express.static(path.join(__dirname, '../www/public')));
 };
-
-
