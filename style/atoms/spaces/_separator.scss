@@ -1,0 +1,21 @@
+.a-slash {
+  border-color: $mono-color-1;
+  &--left {
+    border-left: 3px solid;
+  }
+  &--right {
+    border-right: 3px solid;
+  }
+  &--top {
+    border-top: 3px solid;
+  }
+  &--bottom {
+    border-bottom: 3px solid;
+  }
+  &--slim {
+    border-width: 1px;
+  }
+  &--contrast {
+    border-color: $contrast-color;
+  }
+}

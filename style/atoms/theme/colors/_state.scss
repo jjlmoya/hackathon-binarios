@@ -1,0 +1,10 @@
+
+:root {
+  --success-color: #77DD77;
+  --warning-color: #FFB374;
+  --error-color: #FF6961;
+}
+
+$success-color: var(--success-color);
+$warning-color: var(--warning-color);
+$error-color: var(--error-color);

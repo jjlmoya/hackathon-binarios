@@ -1,0 +1,42 @@
+.a-text {
+  text-align: left;
+  font-weight: normal;
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--bold {
+    font-weight: bold;
+  }
+  &--light {
+    font-weight: lighter;
+  }
+  &--italic {
+    font-style: italic;
+  }
+  &--underline {
+    text-decoration: underline;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--capitalize {
+    text-transform: capitalize;
+  }
+  &--lowercase {
+    text-transform: lowercase;
+  }
+  &--stroke {
+    text-decoration: line-through;
+  }
+}
+
+@media only screen and (max-width: $media-size-m) {
+  .a-text {
+    &__desktop {
+      display: none;
+    }
+  }
+}

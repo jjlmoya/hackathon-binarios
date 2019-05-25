@@ -1,0 +1,42 @@
+.a-text {
+  text-decoration: none;
+  color: $primary-color-text;
+  &--link:hover {
+    color: $secondary-color;
+  }
+  &--link--secondary:hover {
+    color: $mono-color-2;
+  }
+  &--secondary {
+    color: $secondary-color-text;
+  }
+  &--brand {
+    color: $primary-color;
+    &--light {
+      color: $primary-color-light;
+    }
+  }
+  &--brand--secondary {
+    color: $secondary-color;
+  }
+  &--contrast {
+    color: $contrast-color;
+  }
+  &--link {
+    cursor: pointer;
+  }
+  &--success {
+    color: $success-color;
+  }
+  &--shadow {
+    background: $gradient-contrast;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    background-clip: text;
+  }
+  @each $class, $value in $monoColors {
+    &--mono-#{$class} {
+      color: $value;
+    }
+  }
+}

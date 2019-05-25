@@ -1,0 +1,10 @@
+$gradient-contrast: linear-gradient(141deg, var(--primary-color--light) 0%, var(--primary-color--dark) 75%);
+$gradient-mono-light: linear-gradient(141deg, $mono-color-0 0%, var(--primary-color--light) 175%);
+$gradient-brand-transparent: (
+        "to-top" : linear-gradient(0deg, var(--primary-color) 0%, rgba(255, 255, 255, 0.3) 100%),
+        "to-bottom" : linear-gradient(180deg, var(--primary-color) 0%, rgba(255, 255, 255, 0.3) 100%),
+        "to-top--dark" : linear-gradient(0deg, var(--primary-color--dark) 0%, rgba(255, 255, 255, 0.3) 100%),
+        "to-bottom--dark" : linear-gradient(180deg, var(--primary-color--dark) 0%, rgba(255, 255, 255, 0.3) 100%),
+        "to-top--light" : linear-gradient(0deg, var(--primary-color--light) 0%, rgba(255, 255, 255, 0.3) 100%),
+        "to-bottom--light" : linear-gradient(180deg, var(--primary-color--light) 0%, rgba(255, 255, 255, 0.3) 100%),
+);

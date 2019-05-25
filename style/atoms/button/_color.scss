@@ -1,0 +1,29 @@
+.a-button {
+  color: $primary-color-text;
+  background-color: $primary-color;
+  &:hover {
+    background-color: $secondary-color-light;
+  }
+  &--gradient {
+    background: -webkit-linear-gradient($primary-color, $primary-color-dark);
+    &.a-button--secondary {
+      background: -webkit-linear-gradient($secondary-color, $secondary-color-dark);
+    }
+  }
+  &--secondary {
+    color: $secondary-color-text;
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+  &--mono-0 {
+    color: $primary-color;
+    background-color: $mono-color-0;
+    border: 1px solid $mono-color-0;
+    &:hover {
+      border-color: $primary-color;
+      background-color: $mono-color-0;
+    }
+  }
+}

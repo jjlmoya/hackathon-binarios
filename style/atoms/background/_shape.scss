@@ -1,0 +1,18 @@
+.a-bg {
+  &--image {
+    position: relative;
+    background-color: rgba($mono-color-9, 0.6);
+    &::after {
+      content: "";
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.a-svg {
+  svg {
+    width: 20px;
+    height: 20px;
+    path {
+      fill: $mono-color-0;
+    }
+  }
+  &:hover {
+    path {
+      fill: $mono-color-9;
+    }
+  }
+  &--brand {
+    svg {
+      path {
+        fill: $primary-color;
+      }
+    }
+    &:hover {
+      path {
+        fill: $secondary-color;
+      }
+    }
+  }
+  @each $class, $value in $monoColors {
+    &--mono-#{$class} {
+      fill: $value;
+    }
+  }
+
+}

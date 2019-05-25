@@ -1,0 +1,25 @@
+.a-button--icon {
+  background-color: $primary-color;
+  padding: 5px;
+  cursor: pointer;
+  svg {
+    fill: $primary-color-text;
+    width: 100%;
+    height: 100%;
+  }
+  &--border {
+    border: 1px solid $mono-color-0;
+    &:hover {
+      border-color: $mono-color-3;
+    }
+  }
+  &--secondary {
+    background-color: $secondary-color;
+    svg {
+      fill: $secondary-color-text;
+    }
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+}

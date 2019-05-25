@@ -1,0 +1,31 @@
+.a-bg {
+  background-color: $primary-color;
+  &--dark {
+    background-color: $primary-color-dark;
+  }
+  &--secondary {
+    background-color: $secondary-color;
+    &--dark {
+      background-color: $secondary-color-dark;
+    }
+    &--light {
+      background-color: $secondary-color-light;
+    }
+  }
+  &--light {
+    background-color: $primary-color-light;
+  }
+  @each $class, $value in $monoColors {
+    &--mono-#{$class} {
+      background-color: $value;
+    }
+  }
+
+  &--picture {
+    background-size: cover;
+  }
+  &--grayscale {
+    filter: grayscale(100%);
+  }
+}
+

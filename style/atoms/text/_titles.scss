@@ -1,0 +1,20 @@
+.a-title {
+  &--underline {
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: linear-gradient(
+                      $primary-color 0%,
+                      $primary-color 50%,
+                      $secondary-color 51%,
+                      $secondary-color 100%);
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      z-index: -1;
+    }
+  }
+}

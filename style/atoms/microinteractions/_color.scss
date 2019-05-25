@@ -1,0 +1,9 @@
+.a-mi--color {
+  &-grayscale {
+    filter: grayscale(100%);
+    transition: all 1.5s linear;
+    &.is-all-visible {
+      filter: grayscale(0%);
+    }
+  }
+}

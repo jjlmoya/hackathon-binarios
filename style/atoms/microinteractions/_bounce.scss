@@ -1,0 +1,33 @@
+.a-mi-bounce {
+  transform: translateX(-200%);
+  &.is-loaded, &.is-active, .is-active & {
+    animation: bounce-animation 1s ease-in-out forwards;
+    will-change: transform;
+  }
+  &--delayed {
+    &.is-loaded, &.is-active, .is-active & {
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes bounce-animation {
+  0% {
+    transform: translateX(-2000px);
+  }
+  63% {
+    transform: translateX(30px);
+  }
+  70%, 80%, 90%, 100% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(14px);
+  }
+  85% {
+    transform: translateX(8px);
+  }
+  95% {
+    transform: translateX(4px);
+  }
+}

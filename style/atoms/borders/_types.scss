@@ -1,0 +1,27 @@
+.a-border {
+  border: 1px solid $mono-color-9;
+  &--fat {
+    border-width: 5px;
+  }
+  &--gigantic {
+    border-width: 10px;
+  }
+  &--primary {
+    border-color: $primary-color;
+  }
+  &--dark {
+    border-color: $primary-color-dark;
+  }
+  &--light {
+    border-color: $primary-color-light;
+  }
+  &--secondary {
+    border-color: $secondary-color;
+  }
+  &--rounded {
+    border-radius: 50%;
+  }
+  &--smooth {
+    border-radius: 5px;
+  }
+}

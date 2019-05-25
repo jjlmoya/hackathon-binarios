@@ -1,0 +1,55 @@
+.l-position {
+  position: relative;
+  &--sticky {
+    position:fixed;
+    top:0;
+  }
+  &--absolute {
+    position: absolute;
+    &--center {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      &-x {
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    &--top-right {
+      right: 10px;
+      top: 10px;
+    }
+    &--top-left {
+      left: 10px;
+      top: 10px;
+    }
+    &--bottom-left {
+      left: 10px;
+      bottom: 10px;
+    }
+    &--bottom-right {
+      right: 10px;
+      bottom: 10px;
+    }
+    &--bottom {
+      bottom: 10px
+    }
+  }
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    &--bottom {
+      top: inherit;
+      bottom: 0;
+    }
+  }
+  &--sticky {
+    position: sticky;
+    top: 0;
+  }
+
+}

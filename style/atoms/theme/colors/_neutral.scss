@@ -1,0 +1,44 @@
+
+:root {
+  --mono-color-0: #FFFFFF;
+  --mono-color-1: #eff2f7;
+  --mono-color-2: #cccccc;
+  --mono-color-3: #b7b7b7;
+  --mono-color-4: #8a8a8a;
+  --mono-color-5: #676767;
+  --mono-color-6: #484848;
+  --mono-color-7: #343434;
+  --mono-color-8: #1f1f1f;
+  --mono-color-9: #000000;
+  --shadow-dark: rgba(0, 0, 0, 0.25);
+  --shadow-dark-5: rgba(0, 0, 0, 0.5);
+  --shadow-dark-7: rgba(0, 0, 0, 0.75);
+  --shadow-white: rgba(255, 255, 255, 0.3);
+}
+
+$mono-color-0: var(--mono-color-0);
+$mono-color-1: var(--mono-color-1);
+$mono-color-2: var(--mono-color-2);
+$mono-color-3: var(--mono-color-3);
+$mono-color-4: var(--mono-color-4);
+$mono-color-5: var(--mono-color-5);
+$mono-color-6: var(--mono-color-6);
+$mono-color-7: var(--mono-color-7);
+$mono-color-8: var(--mono-color-8);
+$mono-color-9: var(--mono-color-9);
+$shadow-white: var(--shadow-white);
+$shadow-dark: var(--shadow-dark);
+$shadow-dark--5: var(--shadow-dark-5);
+$shadow-dark--7: var(--shadow-dark-7);
+$monoColors: (
+        "0": $mono-color-0,
+        "1": $mono-color-1,
+        "2": $mono-color-2,
+        "3": $mono-color-3,
+        "4": $mono-color-4,
+        "5": $mono-color-5,
+        "6": $mono-color-6,
+        "7": $mono-color-7,
+        "8": $mono-color-8,
+        "9": $mono-color-9
+);

@@ -1,0 +1,30 @@
+.a-mi {
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+  &--delayed {
+    transition-delay: 1s;
+  }
+  &--left {
+    transform: translateX(-200%);
+    &.is-loaded, &.is-active, .is-active & {
+      transform: translateX(0);
+    }
+  }
+  &--right {
+    transform: translateX(100%);
+    &.is-loaded {
+      transform: translateX(0);
+    }
+  }
+  &--temporal {
+    &--left {
+      transform: translateX(-100%);
+      &.is-visible {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@import 'zoom';
+@import 'beat';

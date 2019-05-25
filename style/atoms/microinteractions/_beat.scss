@@ -1,0 +1,8 @@
+.a-mi--beat {
+  transition: transform 20s linear;
+  will-change: transform;
+  transform: scale(1);
+  &.is-visible {
+    transform: scale(1.2);
+  }
+}

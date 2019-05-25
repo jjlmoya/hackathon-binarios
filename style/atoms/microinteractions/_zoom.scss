@@ -1,0 +1,19 @@
+.a-mi--zoom {
+  transition: transform 1s linear;
+  will-change: transform;
+  &--fast {
+    transition-duration: 0.5s;
+  }
+  &--slow {
+    transition-duration: 3s;
+  }
+  &--in {
+    transform: scale(0.25);
+  }
+  &--out {
+    transform: scale(2);
+  }
+  &.is-visible, &.is-loaded {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,55 @@
+$font-size-text: 16px;
+$font-size-xl: 34px;
+$font-size-l: 28px;
+$font-size-m: 22px;
+$font-size-sm: 18px;
+$font-size-s: 14px;
+$font-size-xs: 10px;
+
+$font-size-text--mobile: 16px;
+$font-size-xl--mobile: 30px;
+$font-size-l--mobile: 24px;
+$font-size-m--mobile: 20px;
+$font-size-sm--mobile: 18px;
+$font-size-s--mobile: 14px;
+$font-size-xs--mobile: 12px;
+
+.a-text {
+  font-size: $font-size-text;
+  &--xl {
+    font-size: $font-size-xl;
+  }
+  &--l {
+    font-size: $font-size-l;
+  }
+  &--m {
+    font-size: $font-size-m;
+  }
+  &--s {
+    font-size: $font-size-s;
+  }
+  &--xs {
+    font-size: $font-size-xs;
+  }
+}
+
+@media only screen and (max-width: $media-size-m) {
+  .a-text {
+    font-size: $font-size-text--mobile;
+    &--xl {
+      font-size: $font-size-xl--mobile;
+    }
+    &--l {
+      font-size: $font-size-l--mobile;
+    }
+    &--m {
+      font-size: $font-size-m--mobile;
+    }
+    &--s {
+      font-size: $font-size-s--mobile;
+    }
+    &--xs {
+      font-size: $font-size-xs--mobile;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.u-shadow {
+  &--bottom {
+    box-shadow: 0 2px 4px 0 $shadow-dark;
+  }
+  &--top {
+    box-shadow: 0 -2px 4px 0 $shadow-dark;
+  }
+}

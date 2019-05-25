@@ -1,0 +1,136 @@
+.l-flex {
+  display: flex;
+  &--wrap {
+    flex-wrap: wrap;
+  }
+  &--grow {
+    flex-grow: 1;
+    &--2 {
+      flex-grow: 2;
+    }
+  }
+  &--justify {
+    &-center {
+      justify-content: center;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+    &-start {
+      justify-content: flex-start;
+    }
+    &-space-around {
+      justify-content: space-around;
+    }
+    &-space-between {
+      justify-content: space-between;
+    }
+    &-space-evenly {
+      justify-content: space-evenly;
+    }
+  }
+  &--direction {
+    &-column {
+      flex-direction: column;
+    }
+    &-row {
+      flex-direction: row;
+    }
+  }
+  &--align {
+    &-center {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+  }
+  .l-flex-item {
+    &--align {
+      &-center {
+        align-self: center;
+      }
+      &-start {
+        align-self: flex-start;
+      }
+      &-end {
+        align-self: flex-end;
+      }
+    }
+    &--justify {
+      &-center {
+        justify-self: center;
+      }
+      &-start {
+        justify-self: flex-start;
+      }
+      &-end {
+        justify-self: flex-end;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $media-size-m) {
+  .l-flex--mobile {
+    display: flex;
+    &--wrap {
+      flex-wrap: wrap;
+    }
+    &--justify {
+      &-center {
+        justify-content: center;
+      }
+      &-end {
+        justify-content: flex-end;
+      }
+      &-start {
+        justify-content: flex-start;
+      }
+      &-space-around {
+        justify-content: space-around;
+      }
+      &-space-between {
+        justify-content: space-between;
+      }
+    }
+    &--direction {
+      &-column {
+        flex-direction: column;
+      }
+      &-row {
+        flex-direction: row;
+      }
+    }
+    &--align {
+      &-center {
+        align-items: center;
+      }
+    }
+    .l-flex-item {
+      &--align {
+        &-center {
+          align-self: center;
+        }
+        &-start {
+          align-self: flex-start;
+        }
+        &-end {
+          align-self: flex-end;
+        }
+      }
+      &--justify {
+        &-center {
+          justify-self: center;
+        }
+        &-start {
+          justify-self: flex-start;
+        }
+        &-end {
+          justify-self: flex-end;
+        }
+      }
+    }
+  }
+}
+

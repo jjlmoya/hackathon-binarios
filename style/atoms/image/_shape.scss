@@ -1,0 +1,81 @@
+.a-image {
+  &--cover {
+    object-fit: cover;
+  }
+  &--contain {
+    object-fit: contain;
+  }
+  &--full {
+    width: 100%;
+  }
+  &--exposure {
+    img:first-child {
+      mix-blend-mode: lighten;
+    }
+  }
+  &--background {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+  &--avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  &--xs {
+    width: 50px;
+    height: 50px;
+  }
+  &--s {
+    width: 75px;
+    height: 75px;
+  }
+  &--m {
+    width: 100px;
+    height: 100px;
+  }
+  &--xl {
+    width: 150px;
+    height: 150px;
+  }
+  &--big {
+    width: 200px;
+    height: 200px;
+  }
+  &--thumbnail {
+    border-radius: 5px;
+  }
+  &--cover {
+    object-fit: cover;
+  }
+  &--rounded {
+    border-radius: 10px;
+  }
+  &--poster {
+    height: 70vh;
+  }
+  &--parallax {
+    margin-left: calc(50% - 50vw);
+    height: 37.5vmin;
+    background: linear-gradient($primary-color, transparent, $primary-color), var(--img-parallax) 50%/ cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+  }
+}
+
+@media only screen and (max-width: $media-size-m) {
+  .a-image {
+    &--avatar {
+      width: 75px;
+      height: 75px;
+    }
+  }
+}

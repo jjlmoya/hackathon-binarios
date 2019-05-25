@@ -1,0 +1,69 @@
+.a-mar {
+  margin: 10px;
+  @each $class, $value in $spaceMap {
+    &-#{$class} {
+      margin: $value;
+    }
+  }
+  &-auto {
+    margin: 0 auto
+  }
+  &--x {
+    margin: 0 10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin: 0 $value;
+      }
+    }
+  }
+  &--bottom {
+    margin-bottom: 10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin-bottom: $value;
+      }
+    }
+  }
+  &--left {
+    margin-left: 10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin-left: $value;
+      }
+    }
+  }
+  &--right {
+    margin-right: 10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin-right: $value;
+      }
+    }
+  }
+  &--top {
+    margin-top: 10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin-top: $value;
+      }
+    }
+  }
+
+  &--y {
+    margin: 10px 0;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin: $value 0;
+      }
+    }
+
+  }
+  &--minus {
+    margin-top: -10px;
+    @each $class, $value in $spaceMap {
+      &-#{$class} {
+        margin-top: #{-$value};
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+a.a-button, .a-button {
+  font-size: $font-size-xs;
+  &--xs {
+    padding: 0 10px;
+    font-size: $font-size-xs;
+  }
+  &--s {
+    padding: 5px 15px;
+    font-size: $font-size-s;
+  }
+  &--m {
+    padding: 5px 20px;
+    font-size: $font-size-m;
+  }
+  &--xl {
+    padding: 10px 20px;
+    font-size: $font-size-s;
+  }
+  &--fix {
+    width: 100px;
+    &--xs {
+      width: 15px;
+    }
+    &--s {
+      width: 50px;
+    }
+    &--m {
+      width: 150px;
+    }
+  }
+}
