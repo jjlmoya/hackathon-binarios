@@ -1,6 +1,6 @@
 exports.db = function () {
     return {
-        dbName: 'mocking',
+        dbName: 'binarios',
         protocol: 'mongodb://',
         url: 'localhost:27017/'
     }
