@@ -1,0 +1,7 @@
+<h1>Hola Mundo Character</h1>
+
+nombre: {{model.character.name}}
+imagen: {{model.character.image}}
+
+{{model.race}}
+{{#each model.character.others}}{{this.name}}{{this.image}}{{/each}}

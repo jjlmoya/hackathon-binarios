@@ -6,6 +6,30 @@ module.exports = {
     name: 'Spoiler Free',
     logo: 'https://i.pinimg.com/originals/f6/c6/08/f6c6083e49a284ec558ef7380391006f.png',
     model: {
+        character: {
+            name: 'Gollum',
+            alive: true,
+            ring: true,
+            image: 'https://www.syfy.com/sites/syfy/files/styles/1200x680/public/wire/legacy/images/GollumwithFish.jpg',
+            race: 'Hobbit',
+            others: [
+                {
+                    link: '',
+                    name: 'Samsagaz Gamyi',
+                    image: 'http://images2.fanpop.com/images/photos/3000000/Sam-lord-of-the-rings-3067944-1024-768.jpg',
+                },
+                {
+                    link: '',
+                    name: 'Frodo Bolsón',
+                    image: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
+                },
+                {
+                    link: '',
+                    name: 'Bilbo Bolsón',
+                    image: 'https://i.ytimg.com/vi/jqZInPXXHsQ/maxresdefault.jpg',
+                }]
+
+        },
         characters: [
             {
                 link: '',
@@ -89,6 +113,12 @@ module.exports = {
             view: 'pages/hackathon/characters',
             layout: 'main',
             name: 'Personajes'
+        },
+        {
+            path: 'personaje/gollum',
+            view: 'pages/hackathon/gollum',
+            layout: 'main',
+            name: 'Gollum'
         }
     ],
 };

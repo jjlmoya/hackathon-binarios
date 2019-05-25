@@ -16,3 +16,22 @@
     </section>
 
 {{/each}}
+
+<div class="l-flex l-column--1-1 l-grid-column--full">
+    <section class="og-parallax-action {{this.theme}}
+                l-grid-column--full l-column--1-2
+                l-flex l-flex--direction-column l-flex--justify-end
+                a-image--parallax" style="--img-parallax: url('https://steamuserimages-a.akamaihd.net/ugc/929309561229062636/1B88C36AAEF04E96F7D98F7BF76499AC85298438/');background-position:inherit">
+        {{> atoms/title/link href=link
+                modifier="a-text a-text--secondary a-pad a-text--xl a-text--uppercase l-flex-item--align-center a-mar--bottom-60"
+                title="Zonas"}}
+    </section>
+    <section class="og-parallax-action {{this.theme}}
+                l-grid-column--full l-column--1-2
+                l-flex l-flex--direction-column l-flex--justify-end
+                a-image--parallax" style="--img-parallax: url('https://i.pinimg.com/originals/b5/78/7a/b5787a6fad2c2f27f42923da13e64b9c.jpg'); background-position:inherit">
+        {{> atoms/title/link link="/hackathon/personajes/"
+                modifier="a-text a-text--secondary a-pad a-text--xl a-text--uppercase l-flex-item--align-center a-mar--bottom-60"
+                title="Personajes"}}
+    </section>
+</div>
