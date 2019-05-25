@@ -1,0 +1,22 @@
+.og-logo-inline {
+  position: sticky;
+  top: 0;
+  height: 50px;
+  &__image {
+    height: 67px;
+  }
+  &__navigation {
+    &__link {
+      padding: 0 5px;
+    }
+    &--left {
+      padding-right: 40px;
+    }
+    &--right {
+      padding-left: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+}

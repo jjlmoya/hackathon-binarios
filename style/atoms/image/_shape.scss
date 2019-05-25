@@ -65,7 +65,7 @@
   &--parallax {
     margin-left: calc(50% - 50vw);
     height: 37.5vmin;
-    background: linear-gradient($primary-color, transparent, $primary-color), var(--img-parallax) 50%/ cover;
+    background: linear-gradient($primary-color-dark, transparent, $primary-color-dark), var(--img-parallax) 50%/ cover;
     background-attachment: fixed;
     background-blend-mode: multiply;
   }

@@ -2,20 +2,48 @@ module.exports = {
     path: '/hackathon/',
     view: 'pages/hackathon/index',
     layout: 'main',
-    brand: 'sky',
-    name: 'Bonseo',
+    brand: 'purple-skies',
+    name: 'El Señor de los Anillos',
     logo: '/images/hackathon/logo.png',
-    images: {
-        product: 'https://d2wnixsywa9nb4.cloudfront.net/wp-content/uploads/2017/12/02135818/LeetCode_logo.png',
-        bg: 'https://auspostenterprise.com.au/content/dam/corp/ent-gov/insights/digitising-services/how-regulation-and-technology.jpg',
-        products: [
-            'https://cdn-images-1.medium.com/max/1200/1*SlXjjZ8ghJI9w37gzpG9FA.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png',
-            'https://qph.fs.quoracdn.net/main-qimg-f9d834d3d05ba7f0661ad47969e0bfda.webp',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png',
-            'https://qph.fs.quoracdn.net/main-qimg-f9d834d3d05ba7f0661ad47969e0bfda.webp'
-        ],
-        transparent: 'https://cryptorunner.com/wp-content/uploads/2017/10/ethereum-symbol.png'
+    model: {
+        films: [
+            {
+                name: 'La Comunidad del Anillo',
+                image: 'http://elanillounico.com/wp-content/uploads/2016/12/ESDLA.-LCDA.jpg',
+                link: '',
+                characters: [
+                    {
+                        link: '',
+                        name: 'Frodo Bolsón',
+                        image: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
+                    }
+                ]
+            },
+            {
+                name: 'Las Dos Torres',
+                link: '',
+                image: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
+                characters: [
+                    {
+                        link: '',
+                        name: 'Frodo Bolsón',
+                        image: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
+                    }
+                ]
+            },
+            {
+                name: 'El Retorno del Rey',
+                link: '',
+                image: 'https://i.pinimg.com/originals/a1/12/27/a11227c7c318087a61e6cabfc9ef67bb.jpg',
+                characters: [
+                    {
+                        link: '',
+                        name: 'Frodo Bolsón',
+                        image: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
+                    }
+                ]
+            }
+        ]
     },
     pages: [
         {

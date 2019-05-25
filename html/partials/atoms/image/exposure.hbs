@@ -1,0 +1,8 @@
+<div class="a-image--exposure l-position {{pictureClass}} a-text--center">
+    <picture class="{{modifier}}">
+        <img {{#if target}}data-target="{{target}}"{{/if}} class="a-image {{modifier}}" src="{{src}}">
+    </picture>
+    {{> atoms/image/background
+            modifier=modifier
+            src=images.bg}}
+</div>

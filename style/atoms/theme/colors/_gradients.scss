@@ -1,4 +1,4 @@
-$gradient-contrast: linear-gradient(141deg, var(--primary-color--light) 0%, var(--primary-color--dark) 75%);
+$gradient-contrast: linear-gradient(141deg, var(--secondary-color--light) 0%, var(--secondary-color--dark) 75%);
 $gradient-mono-light: linear-gradient(141deg, $mono-color-0 0%, var(--primary-color--light) 175%);
 $gradient-brand-transparent: (
         "to-top" : linear-gradient(0deg, var(--primary-color) 0%, rgba(255, 255, 255, 0.3) 100%),

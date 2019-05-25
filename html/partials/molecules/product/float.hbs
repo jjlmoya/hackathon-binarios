@@ -1,0 +1,30 @@
+<div class="ml-product-float a-bg--gradient--transparent-to-top
+            a-mar a-mar--top-{{margin}}
+            l-flex l-flex--align-center l-flex--justify-center l-flex--direction-column">
+    <div class="ml-product-float__content
+                l-flex l-flex--direction-column  l-flex-align--center
+                a-mar-auto a-bg a-pad--x">
+        {{> atoms/image/normal
+                pictureClass="a-text--center"
+                modifier=(concat "a-mar--minus-" margin)
+                src=(ternary image images.transparent)
+        }}
+        {{> atoms/title/h2 modifier="a-text--m a-text--secondary a-pad--y-5" title=title}}
+        {{#if price}}
+            {{> atoms/content/price modifier="a-text--secondary a-text--bold a-pad--y-5" value="2.35" currency="€"}}
+        {{else if discount}}
+            {{> atoms/content/priceDiscount modifier="a-text--secondary a-text--bold a-pad--y-5" beforeValue="5.35" value="2.35" currency="€"}}
+        {{/if}}
+        {{#if message}}
+            {{> molecules/message/demand
+                    message="Dios está matando 1 gatito"
+                    icon="atoms/icons/animals/kitty"
+            }}
+        {{/if}}
+        {{> atoms/paragraph/simple
+                modifier="a-text--secondary a-text--xs a-pad--y-5"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore." }}
+    </div>
+    {{> molecules/action/icons
+            modifier="ml-product-float__action a-mar--minus"}}
+</div>

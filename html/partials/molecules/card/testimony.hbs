@@ -1,0 +1,17 @@
+<div class="ml-card-testimony l-flex l-flex--justify-center {{modifier}} a-mar u-shadow--bottom l-flex--align-center">
+    {{> atoms/image/avatar
+        src=image
+        pictureClass="a-pad"
+        modifier=""
+    }}
+    <div class="ml-card-testimony__content l-flex l-flex--direction-column l-flex--align-center a-pad">
+        {{> atoms/title/h3
+                title=name
+                modifier="a-text--bold l-flex-item--align-start"
+        }}
+        {{> atoms/paragraph/simple
+                text=opinion
+                modifier="l-flex-item--align-start"
+        }}
+    </div>
+</div>

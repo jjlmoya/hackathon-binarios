@@ -1,0 +1,10 @@
+<div class="ml-image-selection {{modifier}}">
+    {{#each images.products}}
+        {{> atoms/image/normal
+                src=this
+                pictureClass=""
+                target=../target
+                modifier="bs_image_replace a-border a-image--s a-image--cover u-pointer"
+        }}
+    {{/each}}
+</div>

@@ -1,0 +1,19 @@
+<div class="ml-article-banner l-column--1-3 l-column--mobile--1-1 l-flex l-flex-wrap l-flex--direction-column l-flex--align-center a-pad">
+    {{> atoms/image/normal
+            src=src
+            pictureClass="l-column--1-1"
+            modifier="l-column--1-1 a-image--xl"
+    }}
+    {{> atoms/title/h3 title="Guía de viaje"
+            modifier="a-bg bs_viewport a-mar--minus-20 a-mi a-mi--left ml-article-banner__tag l-column--2-3 a-mar-auto a-pad-20 a-text--center a-text--secondary"}}
+    {{#if urgency}}
+        {{> molecules/message/demand modifier="a-mar"
+                message="Dios está matando 1 gatito"
+                icon="atoms/icons/animals/kitty"
+        }}
+    {{/if}}
+    {{> atoms/paragraph/simple
+            text="Entra y descubre los rincones de las Isla. navega conmigo y esas cosas para rellenar la caja..."
+            modifier="a-pad a-text--center"
+    }}
+</div>

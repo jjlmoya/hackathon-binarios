@@ -1,0 +1,12 @@
+<a href="{{link}}" class="ml-article-rectangle
+                          a-text
+                          l-flex l-flex--align-center
+                          a-pad
+                          {{modifier}}">
+    {{> atoms/image/normal pictureClass="" modifier="a-image--m a-image--rounded a-image--cover u-shadow--bottom" src=image}}
+    <div class="ml-article-rectangle__container
+        l-flex l-flex--direction-column a-pad">
+        {{> atoms/title/h3 title=title modifier="a-text--brand a-text--bold"}}
+        {{> atoms/paragraph/simple text=excerpt modifier="a-text--light a-text--s"}}
+    </div>
+</a>

@@ -1,0 +1,25 @@
+<div class="ml-share-deploy {{modifier}} {{id}}"
+     data-via="{{via}}"
+     data-share-text="{{text}}"
+     data-share-link="{{url}}"
+     data-hashtags="{{tags}}">
+    <div class="ml-share-deploy__share ml-share-deploy__share--left">
+        <div class="ml-share-deploy__share__area a-svg {{iconModifier}}">
+            {{> atoms/icons/social/share}}
+        </div>
+        <nav class="ml-share-deploy__navigation  u-pointer">
+            <div data-social="twitter" data-target="{{id}}"
+                 class="bs_social_media ml-share-deploy__navigation__network a-svg {{iconModifier}}">
+                {{> atoms/icons/social/twitter}}
+            </div>
+            <div data-social="whatsapp" data-target="{{id}}"
+                 class="bs_social_media ml-share-deploy__navigation__network a-svg {{iconModifier}}">
+                {{> atoms/icons/social/whatsapp}}
+            </div>
+            <div data-social="facebook" data-target="{{id}}"
+                 class="bs_social_media ml-share-deploy__navigation__network a-svg {{iconModifier}}">
+                {{> atoms/icons/social/facebook}}
+            </div>
+        </nav>
+    </div>
+</div>

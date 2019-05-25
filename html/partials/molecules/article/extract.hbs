@@ -1,0 +1,27 @@
+<div class="ml-article-extract l-flex l-flex--wrap {{modifier}} a-pad">
+    <div class="ml-article-extract__image l-column--1-2 l-column--mobile--1-1">
+        {{> atoms/image/thumbnail src=src}}
+    </div>
+    <div class="ml-article-extract__content
+                l-flex
+                l-flex--direction-column
+                l-flex--justify-space-around
+                l-flex--align-center
+                l-column--1-2
+                l-column--mobile--1-1
+                a-pad--x-40">
+        {{> atoms/title/h3
+                title=title
+                size="a-text--l"
+                modifier="l-column--1-1"
+        }}
+        {{> atoms/paragraph/simple
+                text=excerpt
+                modifier="a-pad"
+        }}
+        {{> atoms/button/rounded
+                cta=cta
+                modifier="a-button--s a-button--secondary"
+        }}
+    </div>
+</div>

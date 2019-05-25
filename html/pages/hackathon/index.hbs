@@ -1,1 +1,18 @@
-<h1>Hola Mundo FE</h1>
+{{#each model.films}}
+    <section class="og-parallax-action
+                l-grid-column--full
+                l-flex l-flex--direction-column l-flex--justify-end
+                a-image--parallax" style="--img-parallax: url({{this.image}});">
+        {{> atoms/title/link href=link modifier="a-text a-text--secondary a-pad a-text--xl a-text--uppercase l-flex-item--align-center a-mar--bottom-60" title=this.name}}
+        <div class="l-flex l-column--1-2 l-flex--justify-end l-flex--align-end " style="margin-left: auto;">
+            {{#each this.characters}}
+                {{> atoms/image/normal
+                        src=this.image
+                        pictureClass="a-image--xs"
+                        modifier="a-image--full"
+                        alt=this.name}}
+            {{/each}}
+        </div>
+    </section>
+
+{{/each}}

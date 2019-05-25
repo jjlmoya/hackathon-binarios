@@ -1,0 +1,26 @@
+<div class="ml-card-author l-flex l-flex--direction-column l-flex--justify-center l-column--1-3 l-column--mobile--2-3 a-pad">
+    <div class="ml-card-author__image l-flex-item--align-center l-column--1-1">
+        {{> atoms/image/normal
+                src=image
+                pictureClass="a-pad l-column--1-1"
+                modifier="l-column--1-1"
+        }}
+    </div>
+    <div class="ml-card-author__description a-pad a-border--primary">
+        <h3>
+            {{> atoms/title/link
+                    title=name
+                    link="#"
+                    modifier="a-text--bold a-text--s a-text--link a-text--brand"
+            }}
+        </h3>
+        {{> atoms/paragraph/simple
+                text=career
+                modifier="a-text--bold"
+        }}
+        {{> atoms/paragraph/simple
+                text=description
+                modifier=""
+        }}
+    </div>
+</div>

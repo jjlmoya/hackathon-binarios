@@ -1,0 +1,18 @@
+<ul class="l-grid-column--full ml-breadcrumb-solid l-flex l-flex--align-center a-mar-0 {{modifier}}">
+    <li class="ml-breadcrumb-solid__element
+               a-pad--x"></li>
+    {{#if path}}
+        {{#each path}}
+            <li class="ml-breadcrumb-solid__element a-pad--x">
+                <a href="{{lookup ../url @index}}"
+                   class="ml-breadcrumb-solid__element__content
+                          a-text
+                          a-text--xs
+                          a-text--secondary
+                          {{modifierLink}}">
+                    {{this}}
+                </a>
+            </li>
+        {{/each}}
+    {{/if}}
+</ul>
