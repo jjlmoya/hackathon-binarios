@@ -10,6 +10,7 @@ module.exports = function (app) {
         if (corePage.pages) {
             corePage.pages.forEach(function (page) {
                 app.get(corePage.path + page.path, function (req, res) {
+                    //BBDD ->
                     res.render(page.view, Commons.join(corePage));
                 });
             });

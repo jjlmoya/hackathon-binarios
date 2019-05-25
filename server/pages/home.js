@@ -3,8 +3,8 @@ module.exports = {
     view: 'pages/hackathon/index',
     layout: 'main',
     brand: 'purple-skies',
-    name: 'El Señor de los Anillos',
-    logo: '/images/hackathon/logo.png',
+    name: 'Spoiler Free',
+    logo: 'https://i.pinimg.com/originals/f6/c6/08/f6c6083e49a284ec558ef7380391006f.png',
     model: {
         characters: [
             {

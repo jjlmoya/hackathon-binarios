@@ -2466,6 +2466,14 @@ body {
           filter: inherit !important;
 }
 
+.og-banner-screen {
+  height: 100vh;
+  width: 100vw;
+}
+.og-banner-screen--dark {
+  background-color: var(--mono-color-9);
+}
+
 /** UTILS  **/
 .u-layer-5 {
   z-index: 100000;
@@ -2526,6 +2534,47 @@ body {
 .u-shadow--top {
   -webkit-box-shadow: 0 -2px 4px 0 var(--shadow-dark);
           box-shadow: 0 -2px 4px 0 var(--shadow-dark);
+}
+
+select {
+  --box-shadow: none;
+  --primary-background: #000;
+  --secondary-background: #000;
+  --border-radius: 0;
+  --border-style: 2px solid var(--primary-background);
+  --transform: none;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  margin: 8px;
+  scroll-behavior: smooth;
+  -webkit-transition: ease 100ms;
+  transition: ease 100ms;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: var(--secondary-color);
+  vertical-align: top;
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  background: var(--secondary-background);
+}
+
+select[data-open] {
+  z-index: 10;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transform: var(--transform);
+          transform: var(--transform);
+}
+
+select option {
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=index.css.map */
