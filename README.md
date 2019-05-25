@@ -15,3 +15,23 @@ El HackPEUM se realizará el sábado 25 de Mayo de 2019. El tiempo que dejaremos
 -
 -
 
+### Desarrollo:
+
+
+ - `npm install` 
+ 
+ Server:
+ - `node server/apps.js` 
+ 
+ or livereload:
+ - `nodemon server/apps.js` 
+ 
+ FE Development:
+ - `grunt auto`
+ - `grunt watch`
+ 
+
+### Copyright:
+
+- Licencia GPLv2
+- Arquitectura Basada en [Atom Core](https://github.com/jjlmoya/atom-core/)
