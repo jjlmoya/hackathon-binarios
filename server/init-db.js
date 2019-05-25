@@ -118,9 +118,9 @@ save6 = function (error, result, comunidadCharacters) {
     demographicData: null,
     placeOfBirth: null,
     alive: true,
-    imageUrl: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833',
+    imageUrl: 'https://i.pinimg.com/originals/ec/71/72/ec71723b761a3b59d80b84a5bc6f1acc.jpg',
     pageUrl: '/personaje/galadriel',
-    theme: 'lime-sports',
+    theme: 'lollipop',
   });
 
   doc.save((error, result) => save7(error, result, comunidadCharacters));
@@ -162,23 +162,37 @@ save8 = function (error, bilbo, comunidadCharacters) {
 }
 
  save9 = function (error, bilbo, comunidadCharacters) {
-   if (error) return console.error(error);
-   var doc = new models.Film({
-     name: 'El Retorno del Rey',
-     releaseYear: 2001,
-     duration: 178,
-     storyTimeOrder: 4,
-     characters: comunidadCharacters,
-     places: null,
-     imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
-     pageUrl: '/pelicula/el-retorno-del-rey',
-     theme: 'lollipop',
-   });
-
+     if (error) return console.error(error);
+     var doc = new models.Film({
+         name: 'El Retorno del Rey',
+         releaseYear: 2001,
+         duration: 178,
+         storyTimeOrder: 4,
+         characters: [],
+         places: null,
+         imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
+         pageUrl: '/pelicula/el-retorno-del-rey',
+         theme: 'lollipop',
+     });
+     doc.save((error, result) => save10(error, result, comunidadCharacters));
+ }
    //When last document is saved, close connection
-   doc.save(function (error) {
-    if (error) return console.error(error);
-    console.log('All New Data inserted on DB, closing connection...');
-    mongoose.connection.close();
-  });
+
+     save10 = function (error, bilbo) {
+         if (error) return console.error(error);
+         var doc = new models.Character({
+             name: 'Gollum',
+             demographicData: null,
+             placeOfBirth: null,
+             alive: true,
+             imageUrl: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2019/03/gollum.jpg?itok=5IBx_hjL',
+             pageUrl: '/hackathon/personaje/gollum',
+             theme: 'lollipop',
+         });
+
+         doc.save(function (error) {
+             if (error) return console.error(error);
+             console.log('All New Data inserted on DB, closing connection...');
+             mongoose.connection.close();
+         });
 }

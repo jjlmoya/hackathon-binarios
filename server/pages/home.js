@@ -20,7 +20,7 @@ let getCharacters = function () {
     getFilms = function () {
         var query = models.Film
             .find()
-            .populate('c');
+            .populate('characters');
 
         return query.exec();
     },
