@@ -141,10 +141,44 @@ save7 = function (error, bilbo, comunidadCharacters) {
     theme: 'lollipop',
   });
 
-  //When last document is saved, close connection
-  doc.save(function (error) {
+  doc.save((error, result) => save8(error, result, comunidadCharacters));
+}
+
+save8 = function (error, bilbo, comunidadCharacters) {
+  if (error) return console.error(error);
+  var doc = new models.Film({
+    name: 'Las Dos Torres',
+    releaseYear: 2001,
+    duration: 178,
+    storyTimeOrder: 4,
+    characters: comunidadCharacters,
+    places: null,
+    imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
+    pageUrl: '/pelicula/las-dos-torres',
+    theme: 'lollipop',
+  });
+
+  doc.save((error, result) => save9(error, result, comunidadCharacters));
+}
+
+ save9 = function (error, bilbo, comunidadCharacters) {
    if (error) return console.error(error);
-   console.log('All New Data inserted on DB, closing connection...');
-   mongoose.connection.close();
- });
+   var doc = new models.Film({
+     name: 'El Retorno del Rey',
+     releaseYear: 2001,
+     duration: 178,
+     storyTimeOrder: 4,
+     characters: comunidadCharacters,
+     places: null,
+     imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
+     pageUrl: '/pelicula/el-retorno-del-rey',
+     theme: 'lollipop',
+   });
+
+   //When last document is saved, close connection
+   doc.save(function (error) {
+    if (error) return console.error(error);
+    console.log('All New Data inserted on DB, closing connection...');
+    mongoose.connection.close();
+  });
 }
