@@ -59,9 +59,9 @@ module.exports = function (grunt) {
                     'style/**/*'],
                 tasks: tasks,
                 options: {
-                    spawn: false,
-                },
-            },
+                    spawn: false
+                }
+            }
         },
         postcss: {
             options: {
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: 'www/public/css/*.css'
-            },
+            }
         },
         webpack: {
             options: {
