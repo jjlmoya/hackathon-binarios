@@ -1,13 +1,13 @@
-{{#each this.model.films}}
+{{#each model}}
     <section class="og-parallax-action {{this.theme}}
                 l-grid-column--full
                 l-flex l-flex--direction-column l-flex--justify-end
-                a-image--parallax" style="--img-parallax: url({{this.image}});">
-        {{> atoms/title/link href=link modifier="a-text a-text--secondary a-pad a-text--xl a-text--uppercase l-flex-item--align-center a-mar--bottom-60" title=this.name}}
+                a-image--parallax" style="--img-parallax: url({{this.imageUrl}});">
+        {{> atoms/title/link link=link modifier="a-text a-text--secondary a-pad a-text--xl a-text--uppercase l-flex-item--align-center a-mar--bottom-60" title=this.name}}
         <div class="l-flex l-column--1-2 l-flex--justify-end l-flex--align-end " style="margin-left: auto;">
             {{#each this.characters}}
                 {{> atoms/image/normal
-                        src=this.image
+                        src=this.imageUrl
                         pictureClass="a-image--xs"
                         modifier="a-image--full"
                         alt=this.name}}
