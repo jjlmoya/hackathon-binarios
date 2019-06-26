@@ -11,25 +11,28 @@ El HackPEUM se realizará el sábado 25 de Mayo de 2019. El tiempo que dejaremos
 
 ### Otros Equipos:
 
-- 
+-
 -
 -
 
 ### Desarrollo:
 
 
- - `npm install` 
- 
+ - `npm install`
+
  Server:
- - `node server/apps.js` 
- 
+ - `node server/apps.js`
+
  or livereload:
- - `nodemon server/apps.js` 
- 
+ - `nodemon server/apps.js`
+
  FE Development:
  - `grunt auto`
  - `grunt watch`
- 
+
+ Initialize DB (install and run mongo)
+ - `node server/init-db.js`
+
 
 ### Copyright:
 
