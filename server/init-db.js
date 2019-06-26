@@ -11,39 +11,50 @@ mongoose.connect(Config.db().protocol + Config.db().url + Config.db().dbName,
 
     models = ConfigDBModels.createSchemas(mongoose);
 
-    dropDatabase()
+    dropDatabase();
+
+    saveLaComarca()
+      .then((results) => saveCharacters(results))
+      .then((results) => saveFilms(results))
+      .then(closeConnection);
 })
 
 dropDatabase = function () {
-  models.Place.remove({}, function(err) {
+  models.Place.deleteMany({}, function(err) {
    console.log('Places removed');
 
-   models.Character.remove({}, function(err) {
+   models.Character.deleteMany({}, function(err) {
     console.log('Characters removed');
 
-    models.Film.remove({}, function(err) {
+    models.Film.deleteMany({}, function(err) {
      console.log('Films removed');
-
-     save1();
     });
    });
   });
 }
 
-save1 = function () {
-  let doc = new models.Place({
+saveLaComarca = function () {
+  return new models.Place({
     name: 'La Comarca',
     extension: 100,
     pageUrl: '/zona/la-comarca',
     theme: 'aviator',
-  });
-
-  doc.save((error, result) => save2(error, result));
+  }).save();
 }
 
-save2 = function (error, laComarca) {
-  if (error) return console.error(error);
-  var doc = new models.Character({
+saveCharacters = function (laComarca) {
+  return models.Character.insertMany([
+    getBilbo(laComarca),
+    getGollum(laComarca),
+    getBoromir(),
+    getGandalf(),
+    getSaruman(),
+    getGaladriel(),
+  ]);
+}
+
+getBilbo = function (laComarca) {
+  return {
     name: 'Frodo Bolsón',
     demographicData: ['Hobbit', 'Bolson', 'PortadorAnillo',],
     placeOfBirth: laComarca.id,
@@ -51,17 +62,23 @@ save2 = function (error, laComarca) {
     imageUrl: 'https://pbs.twimg.com/profile_images/914686805991190528/IgdbIKmV_400x400.jpg',
     pageUrl: '/personaje/frodo-bolson',
     theme: 'diable',
-  });
-
-  doc.save((error, result) => save3(error, result));
+  };
 }
 
-save3 = function (error, result) {
-  if (error) return console.error(error);
+getGollum = function (laComarca) {
+  return {
+     name: 'Gollum',
+     demographicData: null,
+     placeOfBirth: laComarca.id,
+     alive: true,
+     imageUrl: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2019/03/gollum.jpg?itok=5IBx_hjL',
+     pageUrl: '/hackathon/personaje/gollum',
+     theme: 'lollipop',
+ };
+}
 
-  let comunidadCharacters = [result];
-
-  var doc = new models.Character({
+getBoromir = function () {
+  return {
     name: 'Boromir',
     demographicData: null,
     placeOfBirth: null,
@@ -69,17 +86,11 @@ save3 = function (error, result) {
     imageUrl: 'https://vignette.wikia.nocookie.net/lotr/images/b/b4/Seanbean_boromir.jpg/revision/latest?cb=20110327195115',
     pageUrl: '/personaje/boromir',
     theme: 'forest',
-  });
-
-  doc.save((error, result) => save4(error, result, comunidadCharacters));
+  };
 }
 
-save4 = function (error, result, comunidadCharacters) {
-  if (error) return console.error(error);
-
-  comunidadCharacters.push(result);
-
-  var doc = new models.Character({
+getGandalf = function () {
+  return {
     name: 'Gandalf',
     demographicData: null,
     placeOfBirth: null,
@@ -87,16 +98,11 @@ save4 = function (error, result, comunidadCharacters) {
     imageUrl: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-the-lord-of-the-rings-ian-mckellen.jpg',
     pageUrl: '/personaje/gandalf',
     theme: 'kino',
-  });
-
-  doc.save((error, result) => save5(error, result, comunidadCharacters));
+  };
 }
 
-save5 = function (error, result, comunidadCharacters) {
-  if (error) return console.error(error);
-
-  comunidadCharacters.push(result);
-  var doc = new models.Character({
+getSaruman = function () {
+  return {
     name: 'Saruman',
     demographicData: null,
     placeOfBirth: null,
@@ -104,95 +110,73 @@ save5 = function (error, result, comunidadCharacters) {
     imageUrl: 'https://vignette.wikia.nocookie.net/lotr/images/0/0c/Christopher_Lee_as_Saruman.jpg/revision/latest?cb=20170127113833',
     pageUrl: '/personaje/saruman',
     theme: 'lime-sports',
-  });
-
-  doc.save((error, result) => save6(error, result, comunidadCharacters));
+  };
 }
 
-save6 = function (error, result, comunidadCharacters) {
-  if (error) return console.error(error);
-
-  comunidadCharacters.push(result);
-  var doc = new models.Character({
+getGaladriel = function () {
+  return {
     name: 'Galadriel',
     demographicData: null,
     placeOfBirth: null,
     alive: true,
     imageUrl: 'https://i.pinimg.com/originals/ec/71/72/ec71723b761a3b59d80b84a5bc6f1acc.jpg',
     pageUrl: '/personaje/galadriel',
-    theme: 'lollipop',
-  });
 
-  doc.save((error, result) => save7(error, result, comunidadCharacters));
+    theme: 'lollipop',
+  };
 }
 
+saveFilms = function (characters) {
+  return models.Film.insertMany([
+    getComunidad(characters),
+    getTorres(characters),
+    getRetorno(characters)
+  ]);
+}
 
-save7 = function (error, bilbo, comunidadCharacters) {
-  if (error) return console.error(error);
-  var doc = new models.Film({
+getComunidad = function (characters) {
+  return {
     name: 'La Comunidad del Anillo',
     releaseYear: 2001,
     duration: 178,
     storyTimeOrder: 4,
-    characters: comunidadCharacters,
+    characters: characters,
     places: null,
     imageUrl: 'http://elanillounico.com/wp-content/uploads/2016/12/ESDLA.-LCDA.jpg',
     pageUrl: '/pelicula/la-comunidad-del-anillo',
     theme: 'lollipop',
-  });
-
-  doc.save((error, result) => save8(error, result, comunidadCharacters));
+  };
 }
 
-save8 = function (error, bilbo, comunidadCharacters) {
-  if (error) return console.error(error);
-  var doc = new models.Film({
+getTorres = function (characters) {
+  return {
     name: 'Las Dos Torres',
     releaseYear: 2001,
     duration: 178,
     storyTimeOrder: 4,
-    characters: comunidadCharacters,
+    characters: characters,
     places: null,
     imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
     pageUrl: '/pelicula/las-dos-torres',
     theme: 'lollipop',
-  });
-
-  doc.save((error, result) => save9(error, result, comunidadCharacters));
+  };
 }
 
- save9 = function (error, bilbo, comunidadCharacters) {
-     if (error) return console.error(error);
-     var doc = new models.Film({
-         name: 'El Retorno del Rey',
-         releaseYear: 2001,
-         duration: 178,
-         storyTimeOrder: 4,
-         characters: [],
-         places: null,
-         imageUrl: 'https://i.pinimg.com/originals/6e/63/9f/6e639f1ff5503e64b7fccc326fcd2469.jpg',
-         pageUrl: '/pelicula/el-retorno-del-rey',
-         theme: 'lollipop',
-     });
-     doc.save((error, result) => save10(error, result, comunidadCharacters));
- }
-   //When last document is saved, close connection
+getRetorno = function (characters) {
+   return {
+     name: 'El Retorno del Rey',
+     releaseYear: 2001,
+     duration: 178,
+     storyTimeOrder: 4,
+     characters: characters,
+     places: null,
+     imageUrl: 'https://i0.wp.com/elanillounico.com/wp-content/uploads/2015/11/ESDLA.-LDT1.jpg',
+     pageUrl: '/pelicula/el-retorno-del-rey',
+     theme: 'lollipop',
+   };
+}
 
-     save10 = function (error, bilbo) {
-         if (error) return console.error(error);
-         var doc = new models.Character({
-             name: 'Gollum',
-             demographicData: null,
-             placeOfBirth: null,
-             alive: true,
-             imageUrl: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2019/03/gollum.jpg?itok=5IBx_hjL',
-             pageUrl: '/hackathon/personaje/gollum',
-             theme: 'lollipop',
-         });
-
-         doc.save(function (error) {
-             if (error) return console.error(error);
-             console.log('All New Data inserted on DB, closing connection...');
-             mongoose.connection.close();
-         });
+closeConnection = function () {
+  console.log('All New Data inserted on DB, closing connection...');
+  mongoose.connection.close();
 }
